@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using Movie.Client.ApiServices;
 
 var builder = WebApplication.CreateBuilder(args);
