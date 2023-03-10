@@ -45,10 +45,9 @@ namespace Movie.Client.Controllers
         }
 
         // GET: Movie/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-
-            return View();
+            return View(await _movieApiService.GetMovie(id));
         }
 
         // GET: Movie/Create
@@ -64,7 +63,7 @@ namespace Movie.Client.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Genre,ReleaseDate,ImageUrl,Rating,Owner")] Movies movies)
         {
-            return View();
+            return View(await _movieApiService.CreateMovie(movies));
         }
 
         // POST: Movie/Edit/5
