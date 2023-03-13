@@ -23,14 +23,14 @@ namespace Movie.Client.Controllers
         // GET: Movie
         public async Task<IActionResult> Index()
         {
-            LogTokenAndClaims();
+            await LogTokenAndClaims();
             return View(await _movieApiService.GetMovies());
         }
 
         public async Task LogTokenAndClaims()
         {
             var identityToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
-            
+
             Debug.WriteLine($"Identity Token: {identityToken}");
 
             foreach (var claim in User.Claims)
@@ -42,6 +42,13 @@ namespace Movie.Client.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
+        }
+
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> OnlyAdmin()
+        {
+            var userInfo = await _movieApiService.GetUserInfo();
+            return View(userInfo);
         }
 
         // GET: Movie/Details/5
@@ -79,7 +86,7 @@ namespace Movie.Client.Controllers
         // GET: Movie/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-           
+
 
             return View();
         }
