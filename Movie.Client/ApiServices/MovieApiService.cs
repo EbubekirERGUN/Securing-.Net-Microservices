@@ -25,7 +25,7 @@ namespace Movie.Client.ApiServices
 
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "api/movie/")
+            var request = new HttpRequestMessage(HttpMethod.Post, "/movie/CreateMovie")
             {
                 Content = new StringContent(JsonConvert.SerializeObject(movies), Encoding.UTF8, "application/json")
             };
@@ -48,7 +48,7 @@ namespace Movie.Client.ApiServices
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
 
 
-            var request = new HttpRequestMessage(HttpMethod.Get, $"api/movie/{id}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/movie/{id}");
 
             var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead)
                 .ConfigureAwait(false);
@@ -64,7 +64,7 @@ namespace Movie.Client.ApiServices
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
 
 
-            var request = new HttpRequestMessage(HttpMethod.Get, "api/movie/");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/movie/All");
 
             var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead)
                 .ConfigureAwait(false);
@@ -78,7 +78,7 @@ namespace Movie.Client.ApiServices
 
         public async Task<UserInfoViewModel> GetUserInfo()
         {
-            
+
             var httpClient = _httpClientFactory.CreateClient("IDPClient");
 
             var metaDataResponse = await httpClient.GetDiscoveryDocumentAsync();

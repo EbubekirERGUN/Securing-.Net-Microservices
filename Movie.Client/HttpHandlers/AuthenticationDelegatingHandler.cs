@@ -22,7 +22,7 @@ public class AuthenticationDelegatingHandler : DelegatingHandler
         _httpContextAccessor = httpContextAccessor;
     }
 
-    protected  override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         // var httpClient = _httpClientFactory.CreateClient("IDPClient");
         //
@@ -38,6 +38,7 @@ public class AuthenticationDelegatingHandler : DelegatingHandler
 
         if (!string.IsNullOrWhiteSpace(accesToken))
         {
+            System.Console.WriteLine(accesToken);
             request.SetBearerToken(accesToken);
         }
 

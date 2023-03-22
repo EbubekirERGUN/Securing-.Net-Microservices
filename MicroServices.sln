@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Client", "Movie.Client\Movie.Client.csproj", "{DB906C12-A1C7-4BA3-80EF-168ADD374828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{CE71D023-AFDD-47A6-B428-FF7471B59ED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{DB906C12-A1C7-4BA3-80EF-168ADD374828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB906C12-A1C7-4BA3-80EF-168ADD374828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB906C12-A1C7-4BA3-80EF-168ADD374828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE71D023-AFDD-47A6-B428-FF7471B59ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE71D023-AFDD-47A6-B428-FF7471B59ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE71D023-AFDD-47A6-B428-FF7471B59ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE71D023-AFDD-47A6-B428-FF7471B59ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

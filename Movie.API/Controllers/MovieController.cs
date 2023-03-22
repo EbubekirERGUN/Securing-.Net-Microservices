@@ -24,7 +24,7 @@ namespace Movie.API.Controllers
         }
 
         // GET: api/Movie
-        [HttpGet]
+        [HttpGet("All")]
         public async Task<ActionResult<IEnumerable<Movies>>> GetMovies()
         {
             if (_context.Movies == null)
@@ -85,7 +85,7 @@ namespace Movie.API.Controllers
 
         // POST: api/Movie
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("CreateMovie")]
         public async Task<ActionResult<Movies>> PostMovie(Movies movie)
         {
             if (_context.Movies == null)
