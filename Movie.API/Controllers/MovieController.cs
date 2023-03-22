@@ -11,6 +11,7 @@ using Movie.API.Model;
 
 namespace Movie.API.Controllers
 {
+    // Emreye göstermelik test 
     [Route("api/[controller]")]
     [ApiController]
     [Authorize("ClientIdPolicy")]
